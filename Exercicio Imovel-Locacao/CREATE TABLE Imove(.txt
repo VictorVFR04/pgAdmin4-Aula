@@ -21,17 +21,22 @@ CREATE TABLE Locacao(
 	valorAlugel decimal not null,
 	id_locador int not null,
 	id_locatario int not null,
+	id_imovel int not null,
+	CONSTRAINT fk_imovel FOREIGN KEY (id_imovel) references Imovel(codigo),
 	CONSTRAINT fk_locador FOREIGN KEY (id_locador) references Pessoa(codigo),
 	CONSTRAINT fk_locatario FOREIGN KEY (id_locatario) references Pessoa(codigo)
 );
 
 INSERT INTO PESSOA (codigo, numCPF, nome, numTelefone)
-	values (123, '123.123.24-234', 'Paulo', '45 9995921314');
+	values (001, '123.123.24-234', 'Paulo', '45 9995921314');
+	
+INSERT INTO PESSOA (codigo, numCPF, nome, numTelefone)
+	values (002, '123.123.24-234', 'Paulo', '45 9995921314');
 	
 INSERT INTO IMOVEL (codigo, numRegIPTU, endereco, valorDiaria)
-	values (123, '123456', 'rua carlos', '200reais');
+	values (100), '123456', 'rua carlos', '200reais');
 	
-INSERT INTO LOCACAO (codigo, numDias, dataInicio, valorAlugel, id_locador, id_locatario)
-	values(123, 20, '20/03/2004', 20, 123, 123);
+INSERT INTO LOCACAO (codigo, numDias, dataInicio, valorAlugel, id_locador, id_locatario, id_imovel)
+	values(010, 20, '20/03/2004', 20, 001, 002, 100);
 	
 	
