@@ -38,5 +38,14 @@ INSERT INTO IMOVEL (codigo, numRegIPTU, endereco, valorDiaria)
 	
 INSERT INTO LOCACAO (codigo, numDias, dataInicio, valorAlugel, id_locador, id_locatario, id_imovel)
 	values(010, 20, '20/03/2004', 20, 001, 002, 100);
+	 
+  SELECT L1.CODIGO,
+	   	 L1.DATAINICIO,
+	   	 L1.VALORALUGEL,
+   		 PES.NOME
+	FROM LOCACAO L1,
+		 PESSOA PES
+   WHERE L1.ID_LOCADOR = PES.CODIGO
+      OR L1.ID_LOCATARIO = PES.CODIGO;
 	
 	
