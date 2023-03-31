@@ -1,0 +1,26 @@
+CREATE TABLE Pessoa(
+	codigo int PRIMARY KEY NOT NULL,
+	numCPF varchar(50) not null,
+	nome varchar(50) not null,
+	numTelefone varchar(20) not null
+);
+
+
+CREATE TABLE Imovel(
+	codigo int PRIMARY KEY NOT NULL,
+	numRegIPTU varchar(10) not null,
+	endereco varchar(30) not null,
+	valorDiaria varchar(20) not null
+);
+
+
+CREATE TABLE Locacao(
+	codigo int PRIMARY KEY NOT NULL,
+	numDias int not null,
+	dataInicio date not null,
+	valorAlugel decimal not null,
+	id_locador int not null,
+	id_locatario int not null,
+	CONSTRAINT fk_locador FOREIGN KEY (id_locador) references Pessoa(codigo),
+	CONSTRAINT fk_locatario FOREIGN KEY (id_locatario) references Pessoa(codigo)
+);

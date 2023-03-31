@@ -1,0 +1,25 @@
+CREATE TABLE Planos(
+	codigo int PRIMARY KEY NOT NULL,
+	nome varchar(50) not null,
+	valor_mensal int not null,
+	duracao varchar(20) not null
+);
+
+CREATE TABLE Clientes(
+	codCB int PRIMARY KEY NOT NULL,
+	nome varchar(50) not null,
+	cpf int not null,
+	telefone varchar(50) not null,
+	CONSTRAINT fk_planos FOREIGN KEY
+	(codCB) references Planos (codigo)
+	
+);
+
+CREATE TABLE Atividades(
+	codAtividade int PRIMARY KEY NOT NULL,
+	nome varchar(50) not null
+);
+
+CREATE TABLE Horarios(
+	hora time PRIMARY KEY NOT NULL
+);

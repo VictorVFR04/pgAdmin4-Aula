@@ -1,0 +1,40 @@
+INSERT INTO DEPARTAMENTO (codigo, descricao)
+	VALUES (1, 'FINANCEIRO');
+INSERT INTO DEPARTAMENTO (codigo, descricao)
+	VALUES (2, 'CONTABILIDADE');
+
+INSERT INTO DEPARTAMENTO (codigo, descricao)
+	VALUES (3, 'GESTAO DE PESSOAS');
+	
+INSERT INTO DEPARTAMENTO (codigo, descricao)
+	VALUES (4, 'INFORMATICA');
+	
+INSERT INTO DEPARTAMENTO (codigo, descricao)
+	VALUES (5, 'VENDAS');
+	
+INSERT INTO DEPARTAMENTO (codigo, descricao)
+	VALUES (6, 'ESTOQUE');
+
+INSERT INTO FUNCIONARIO (codigo, nome, edereco, telefone, cod_departamento)
+	VALUES (1, 'lucas', 'nomade', 999594215, 4);
+	
+INSERT INTO FUNCIONARIO (codigo, nome, edereco, telefone, cod_departamento)
+	VALUES (2, 'matheus', 'nomade', 99899893, 5);
+	
+INSERT INTO FUNCIONARIO (codigo, nome, edereco, telefone, cod_departamento)
+	VALUES (3, 'jacinto', 'nomade', 999438281, 1);
+	
+INSERT INTO FUNCIONARIO (codigo, nome, edereco, telefone, cod_departamento)
+	VALUES (4, 'jose', 'nomade', 99948302, 2);
+	
+INSERT INTO FUNCIONARIO (codigo, nome, edereco, telefone, cod_departamento)
+	VALUES (5, 'Paulo', 'nomade', 99284213, 3);
+	
+INSERT INTO FUNCIONARIO (codigo, nome, edereco, telefone, cod_departamento)
+	VALUES (6, 'Henrique', 'nomade', 999438523, 6);
+	
+	UPDATE DEPARTAMENTO SET DESCRICAO = 'RH' WHERE CODIGO = 3;
+	
+	select * from departamento;
+	
+	select * from funcionario;
