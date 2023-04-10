@@ -1,0 +1,53 @@
+CREATE TABLE Departamento(
+	id int PRIMARY KEY NOT NULL,
+	nome varchar(50) not null,
+	ativo varchar (20) not null
+)
+
+CREATE TABLE Colaborador(
+	id int PRIMARY KEY NOT NULL,
+	id_colaborador int not null,
+	nome varchar(50) not null,
+	cpf varchar(20) not null,
+	data_nascimento date not null,
+	data_admissao date not null,
+	departamento varchar(20) not null,
+	CONSTRAINT fk_departamento FOREIGN KEY (id) references Departamento (id)
+)
+
+CREATE TABLE Epi(
+	id int PRIMARY KEY NOT NULL,
+	id_epi int not null,
+	descricao varchar(50) not null,
+	data_fabricacao date not null,
+	data_vencimento date not null,
+	CONSTRAINT fk_departamento FOREIGN KEY (id) references Departamento (id)
+)
+
+CREATE TABLE ControlEpi(
+	id int PRIMARY KEY NOT NULL,
+	data_entrega date not null,
+	id_colaborador int not null,
+	id_epi int not null,
+	CONSTRAINT fk_colaborador FOREIGN KEY (id_colaborador) references Colaborador (id_colaborador),
+	CONSTRAINT fk_epi FOREIGN KEY (id_epi) references Epi(id_epi),
+	CONSTRAINT fk_departamento FOREIGN KEY (id) references Departamento(id)
+)
+
+INSERT INTO DEPARTAMENTO(id, nome, ativo)
+	values(1, 'rh', 'sim');
+
+INSERT INTO COLABORADOR(id, id_colaborador, nome, cpf, data_nascimento, data_admissao, departamento)
+	values(1, 001, 'lucas', 120392239, '03/08/2002', '01/09/2020', 'rh');
+	
+INSERT INTO EPI(id, id_epi, descricao, data_fabricacao, data_vencimento)
+	values(1, 100, 'mascara', '10/03/2004', '10/03/2005');
+	
+INSERT INTO CONTROLEPI(id, data_entrega, id_colaborador, id_epi)
+	values(1, '10/04/2004', 001, 100)
+	
+
+
+
+
+
