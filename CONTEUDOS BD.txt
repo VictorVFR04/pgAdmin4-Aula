@@ -1,0 +1,46 @@
+*CONTEUDOS:
+*AULA 7
+*JOIN
+*TRIGGERS E FUNCTION
+*BACKUP
+-------------------------------------------------------------
+O comando mais utilizado:
+ 
+SELECT *
+   FROM TABLE_NAME
+
+WHERE
+   CONDITION
+
+(1 questão descritiva para construir uma consulta)
+---------------------------------------------------------------
+(Saber a diferença entre os join, treinar inner!!)
+
+INNER JOIN;
+RIGHT JOIN; //traz o que está nulo na tabela da esquerda
+LEFT JOIN; //traz o que está nulo na tabela da direita
+FULL JOIN;
+CROSS JOIN;
+
+CERTEZA QUE INNER, RIGHT E LEFT CAIRÃO (PRECISA APRENDER A FAZER)
+------------------------------------------------------------
+Ex. Apresente uma consulta com todos nomes dos dependentes, assim como seus respectivo funcionários, mostrando inclusive os funcionários que não possuem dependentes:
+R=
+
+SELECT dp1.nome Nome_dependente,
+     f1.nome Nome_funcionario
+FROM dependentes dp1
+RIGHT JOIN funcionario f1 On f1.codigo = dp1.cod_funcionario;
+-------------------------------------------------------------
+Praticar os exercícios(aula7)
+
+"Triggers é um gatilho para disparar outro comando/função"  (DECORAR OQUE É TRIGGER)
+
+NÂO VAI PRECISAR CODAR TRIGGERS, APENAS ANALISAR
+-------------------------------------------------------------
+Comando para fazer backup:
+pg_dump dbase > nomeDoArquivo
+
+Replicação De Dados e Streaming De Dados são excelentes estratégias para manter o BD atualizado
+
+O que é backup?
